@@ -5,27 +5,33 @@ import Invoices from './pages/invoices';
 import Quotations from './pages/quotations';
 import Receipts from './pages/receipts';
 
-import { withAuthenticator } from "@aws-amplify/ui-react";
+import { AmplifyAuthenticator } from '@aws-amplify/ui-react';
+import HomePage from './pages/home';
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path='/dashboard'>
-          <Dashboard />
+        <Route exact path='/'>
+          <HomePage />
         </Route>
-        <Route exact path='/quotations'>
-          <Quotations />
-        </Route>
-        <Route exact path='/invoices'>
-          <Invoices />
-        </Route>
-        <Route exact path='/receipts'>
-          <Receipts />
-        </Route>
+        <AmplifyAuthenticator>
+          <Route exact path='/dashboard'>
+            <Dashboard />
+          </Route>
+          <Route exact path='/quotations'>
+            <Quotations />
+          </Route>
+          <Route exact path='/invoices'>
+            <Invoices />
+          </Route>
+          <Route exact path='/receipts'>
+            <Receipts />
+          </Route>
+        </AmplifyAuthenticator>
       </Switch>
     </Router>
   );
 }
 
-export default withAuthenticator(App);
+export default App;

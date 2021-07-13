@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "binayadminconsole9bd40d60": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}

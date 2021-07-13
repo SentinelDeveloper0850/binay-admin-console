@@ -1,5 +1,5 @@
 import { DeleteTwoTone, PlusOutlined } from '@ant-design/icons';
-import { Button, Col, Drawer, List, Row, Table } from 'antd';
+import { Button, Col, Drawer, List, Row, Table, Form, Input } from 'antd';
 import moment from 'moment';
 import { useState } from 'react';
 import ActionBar from '../components/ActionBar';
@@ -121,6 +121,14 @@ const Quotations = () => {
             </Button>
           </div>
         }>
+        <Row gutter={16}>
+          <Col span={6}>
+            <Form.Item label="Client"><Input value={newQuote.name} placeholder="Loosie Goosie" /></Form.Item>
+          </Col>
+          <Col span={6}>
+            <Form.Item label="Description"><Input value={newQuote.client} placeholder="Company Website Development" /></Form.Item>
+          </Col>
+        </Row>
         <QuoteItemForm handleSubmit={handleItemSubmit} />
         <Break />
         <List

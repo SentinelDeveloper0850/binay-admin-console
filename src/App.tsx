@@ -5,6 +5,8 @@ import Invoices from './pages/invoices';
 import Quotations from './pages/quotations';
 import Receipts from './pages/receipts';
 
+import { withAuthenticator } from "@aws-amplify/ui-react";
+
 function App() {
   return (
     <Router>
@@ -26,4 +28,4 @@ function App() {
   );
 }
 
-export default App;
+export default withAuthenticator(App);
